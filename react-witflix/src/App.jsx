@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Route } from 'react-router-dom'
+import Login from './pages/Login'
+import Welcome from './pages/Welcome';
+import Home from './pages/Home';
+import Header from './components/Header/Header';
+import { Link, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+ 
+     <Switch>
+     <Route exact path="/">   
+     <h1>Welcome to Netflix by Wit</h1>
+     </Route>
+     <Route exact path="/login">
+     <Header/>
+       <Login/>
+     </Route>
+     <Route exact path="/welcome">
+       <Welcome/>
+     </Route>
+     <Route path="/home">
+     <Header/>
+       <Home/>
+     </Route>
+     </Switch>
+<div className= "dev-navigation">
+<Link to="/">HomePage</Link>
+<Link to="/login">Login</Link>
+<Link to="/welcome">Welcome</Link>
+<Link to="/home">Home</Link>
+
+
+</div>
+
+
+
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
