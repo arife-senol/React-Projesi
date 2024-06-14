@@ -13,17 +13,16 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <h1>Welcome to Netflix by Wit</h1>
+          <h1>Welcome to Witflix by Arife</h1>
         </Route>
         <Route exact path="/login">
-          <Header />
+          
           <Login />
         </Route>
         <Route exact path="/welcome">
           <Welcome setActiveProfile={setActiveProfile} />
         </Route>
         <Route path="/home">
-          <Header />
           <Home activeProfile = {activeProfile}/>
         </Route>
       </Switch>
