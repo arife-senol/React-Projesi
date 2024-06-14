@@ -31,11 +31,11 @@ export default function Suggestion(props) {
     }; */
 
     axios
-      .get("https://movies-api14.p.rapidapi.com/" + category, {
+      .get("https://movies-api14.p.rapidapi.com/movies", {
         headers: {
-          "x-rapidapi-key":
-            "2ce04038e2msh104054e193ec289p18cdf9jsnb6a4a44d19e9",
-          "x-rapidapi-host": "movies-api14.p.rapidapi.com",
+'x-rapidapi-key': 'a13356cab4mshb7f683dbdc4dc50p1ee1f0jsn3b21084104fe',
+    'x-rapidapi-host': 'movies-api14.p.rapidapi.com'
+,
         },
       })
       .then((response) => {
